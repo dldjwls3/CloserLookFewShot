@@ -168,7 +168,7 @@ class SimpleBlock(nn.Module):
             self.parametrized_layers.append(self.BNshortcut)
             self.shortcut_type = '1x1'
         else:
-            self.shortcut_type = 'identity'
+            self.shortcut_type = 'identity' # bug가 아닌가..? half_res == True 일 때 conv2d 씌워주어야 할 것 같은디..
 
         for layer in self.parametrized_layers:
             init_layer(layer)
